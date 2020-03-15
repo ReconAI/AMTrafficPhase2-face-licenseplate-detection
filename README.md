@@ -2,12 +2,12 @@
 Detection of faces and licene plates with different methods
 
 Data to check speed/ visually assess performance:
--EU number plates https://drive.google.com/open?id=1aI0Ug1SqQgOZKWTDH8xr7996wUNCsW0I
--Faces [to be added]
+- EU number plates https://drive.google.com/open?id=1aI0Ug1SqQgOZKWTDH8xr7996wUNCsW0I
+- Faces [to be added]
 
 Methods:
--LP: LBP cascade, []
--Face: [to be added]
+- LP: LBP cascade, []
+- Face: [to be added]
 
 
 ## HOW TO TEST
