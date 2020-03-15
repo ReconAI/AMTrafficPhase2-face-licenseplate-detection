@@ -16,7 +16,7 @@ Methods:
 
 ### License plates
 - Cascade:
-1) Download sample frames and .xml 
+1) Download sample images and .xml 
 2) Put the downloaded files in root folder
 3) run ```python3 test_casade.py --in_folder {./eu} --out_path {path to save samples} --cascade_path {.xml file}```
 
