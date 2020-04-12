@@ -1,0 +1,40 @@
+{
+    "dbscan_criterion": "IOU",
+    "dbscan_eps": {
+        "face": 0.35,
+        "license_plate": 0.5
+    },
+    "dbscan_min_samples": {
+        "face": 0.05,
+        "license_plate": 0.05
+    },
+    "min_cov_to_cluster": {
+        "face": 0.005,
+        "license_plate": 0.005
+    },
+    "min_obj_height": {
+        "face": 4,
+        "license_plate": 4
+    },
+    "target_classes": ["face", "license_plate"],
+    "confidence_th": {
+        "face": 0.8,
+        "license_plate": 0.8
+    },
+    "confidence_model": {
+        "face": { "kind": "aggregate_cov"},
+        "license_plate": { "kind": "aggregate_cov"}
+    },
+    "output_map": {
+        "face" : "face",
+        "license_plate" : "license_plate"
+    },
+    "color": {
+        "face": "magenta",
+        "license_plate": "blue"
+    },
+    "postproc_classes": ["face", "license_plate"],
+    "image_height": 640,
+    "image_width": 640,
+    "stride": 16
+}
