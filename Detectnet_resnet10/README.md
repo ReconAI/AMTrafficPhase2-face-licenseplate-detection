@@ -20,3 +20,5 @@ deepstream configs
 ### Loss curves?
 
 ### Weight links
+
+### Video
