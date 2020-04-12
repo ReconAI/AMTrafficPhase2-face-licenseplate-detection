@@ -9,7 +9,6 @@ import time
 import numpy as np
 import onnx
 import onnxruntime as ort
-from onnx_tf.backend import prepare
 import box_utils
 
 def predict(width, height, confidences, boxes, prob_threshold, iou_threshold=0.5, top_k=-1):
@@ -54,7 +53,7 @@ for filename in os.listdir('./examples'):
     raw_img = cv2.imread(os.path.join('./examples',filename))
     h, w, _ = raw_img.shape
     img = cv2.cvtColor(raw_img, cv2.COLOR_BGR2RGB)
-    img = cv2.resize(img, (320, 240))
+    img = cv2.resize(img, (640, 480))
     img_mean = np.array([127, 127, 127])
     img = (img - img_mean) / 128
     img = np.transpose(img, [2, 0, 1])
