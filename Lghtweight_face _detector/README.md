@@ -12,6 +12,6 @@ For x86 architectures, there are ready binaries for onnx-runtime, can install th
 ### Testing 
 run `python3 detect_ultra_light.py`
 
-The script will output images with faces highlighted in red to ./TestOutput
+The script will output images with faces highlighted in red to ./TestOutput, and print iference latencies in terminal.
 
-![sample](TestOutput/ultra-light_1_0_Parade_marchingband_1_47.jpg)
+![sample](result.jpg)
