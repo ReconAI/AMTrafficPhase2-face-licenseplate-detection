@@ -8,15 +8,11 @@ First I tried to train my own cascade, but that did not converge in reasonable t
 
 The cascade runs at ~70 ms on a system with OpenCV without CUDA support, and ~40 ms on a system with Opencvwith CUDA support.
 
-Data to check speed/ visually assess performance:
-- [EU number plates](https://drive.google.com/open?id=1aI0Ug1SqQgOZKWTDH8xr7996wUNCsW0I)
 
 ### HOW TO TEST
 
-0. run ```pip3 install -r requirements.txt```
-1. Download sample images and .xml 
-2. Put the downloaded files in root folder
-3. run ```python3 test_casade.py --in_folder {./eu} --out_path {path to save samples} --cascade_path eu.xml```
+1. run ```pip3 install -r requirements.txt```
+2. run ```python3 test_casade.py --in_folder {../test_licenseplate} --out_path {path to save samples} --cascade_path eu.xml```
 
 
 The script will save images with license plates highlighted, and print inference time to terminal.
@@ -25,3 +21,7 @@ The script will save images with license plates highlighted, and print inference
 
 There are a number of pre-trained cascade models available, most widely used ones coming with opencv library by default. However, they are not robust: one needs a separate model for frontal and lateral face detection. A quick test also demonstrated poor qualitative performance. Hence, I searched for other to other lightweight face detectors, see ../Lightweight_face_detector.
 
+### HOW TO TEST
+
+1. run ```pip3 install -r requirements.txt```
+2. run ```python3 test_casade.py --in_folder {../test_faces} --out_path {path to save samples} --cascade_path frontal_face.xml```
