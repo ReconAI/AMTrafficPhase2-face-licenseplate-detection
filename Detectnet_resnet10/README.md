@@ -1,5 +1,5 @@
 ## Detectnet_v2 based on resnet-10
-Detectnet is a network architecture developed by NVIDIA as a single-shot lightweight object detector. It is used in most of their sample applications. It is rather robust in terms of backbone architectures accepted (resnets, mobilenets). Nvidia provides tools to train such models and get them in format that Deepstream apps can digest. As we want our final model to be integrated into Deepstream app, and want it to be optimized for running on Nano, I decided to go for Nvidia's own DL tools. There are 2 Nvidia's products for training networks optimized for edge devices: [DIGITS]() and [TLT](). Of the two, TLT is a newer product and is more in-line with modern DL tools (uses tensorflow for training, tfrecords for data routines and tensorboard for logging). DIGITS runs on Caffe, has rather obscure configuration files for network architectures, proprietary data storage format and visualization interfaces. Also, TLT comes with ready-made utilities for model compression and conversion to a format expected by Deepstream, as well as a number of other architectures (classifiacation models, SSD, Fast-Rcnn). Having summed up pros and cons, I decided to go with TLT. 
+Detectnet is a network architecture developed by NVIDIA as a single-shot lightweight object detector. It is used in most of their sample applications. It is rather robust in terms of backbone architectures accepted (resnets, mobilenets). Nvidia provides tools to train such models and get them in format that Deepstream apps can digest. As we want our final model to be integrated into Deepstream app, and want it to be optimized for running on Nano, I decided to go for Nvidia's own DL tools. There are 2 Nvidia's products for training networks optimized for edge devices: [DIGITS](https://developer.nvidia.com/digits) and [TLT](https://docs.nvidia.com/metropolis/TLT/tlt-getting-started-guide/index.html#gettingstarted_overview). Of the two, TLT is a newer product and is more in-line with modern DL tools (uses tensorflow for training, tfrecords for data routines and tensorboard for logging). DIGITS runs on Caffe, has rather obscure configuration files for network architectures, proprietary data storage format and visualization interfaces. Also, TLT comes with ready-made utilities for model compression and conversion to a format expected by Deepstream, as well as a number of other architectures (classifiacation models, SSD, Fast-Rcnn). Having summed up pros and cons, I decided to go with TLT. 
 
 
 ### Framework deployment
@@ -37,6 +37,7 @@ Once ready, the exported model can be connected to a Deepstream app. [Here](http
 I was able to achieve 0.72 mAP on validation set. Qualitative results can be seen from videos below
 
 [download video here](https://drive.google.com/open?id=1tAd_WvfB2kfSFZ-GoK23wsNVi8jHI6rn)
+
 ![sample image](https://drive.google.com/open?id=1tAd_WvfB2kfSFZ-GoK23wsNVi8jHI6rn)
 
 
