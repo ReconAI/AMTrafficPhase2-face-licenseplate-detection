@@ -32,6 +32,7 @@ This got me 0.5 mAP, which is not a satisfactory result, as mentioned above.
 run inference on arbitrary image set and receive detection as .json
 `retinanet infer model.pth --images=/data/your_images --output=detections.json`
 
+sample results on test set can be seen in ./test_imgs
 
 ### Loss curve
 ![losses](loss.jpg)
