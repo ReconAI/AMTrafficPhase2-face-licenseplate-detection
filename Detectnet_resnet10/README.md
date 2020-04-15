@@ -44,11 +44,11 @@ tlt-export --export_module detectnet_v2   -k flp --outputs output_bbox/BiasAdd,o
 Once ready, the exported model can be connected to a Deepstream app. [Here](https://drive.google.com/open?id=14O8E5okYmYBp2fqL8wn75Y83OKHMAc21) is the link to config files for running the sample Deepstream app with the exported model. This sample app is to be launched as `deepstream-app -c config_deepstream.txt`
 
 ### Results
-I was able to achieve 0.71 mAP on validation set. Qualitative results can be seen from videos below, or evaluated by running the inference command mentioned above on the test images attached to the root of the repository.
+I was able to achieve 0.71 mAP on validation set. Qualitative results can be seen from videos and images below, or evaluated by running the inference command mentioned above on the test images attached to the root of the repository.
 
 [download video here](https://drive.google.com/open?id=1tAd_WvfB2kfSFZ-GoK23wsNVi8jHI6rn)
 
-![sample image](sample_result.jpg)
+[test image results](https://drive.google.com/open?id=1KtczIrgb7nTKAkedNODnuG_l7r6FEEy0)
 
 
 ### Weight links
