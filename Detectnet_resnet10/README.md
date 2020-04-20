@@ -3,7 +3,7 @@
 
 In TLT, there are several options for a detector: Detectnet, SSD or Fast-Rcnn. However, only Detectnet is currently integrated easily into Deepstream apps. For other two, one needs to prepare a C++ module to parse the output of the network. Also, most of the examples by NVIDIA about their ultra fast solutions runnin on Nano were based on Detectnet architecture. This is why I have chosen it for the experiments.
 
-First I trained a resnet18 based model. This one had two drawbacks- first, it did not detect smaller license plates because the dataset contained mostly car shots from near range. Second, it was running only 22 FPS max. Having these results, I decided to go for a lighter resnet10 backbone with more extensive scaling augmentations- i.e. zooming out the image to make LPs smaller. This resulted in a more robust model with ,aximum speed of 28 FPS after all optimizations. The below submission (weights and configs and results) represents this model.
+First I trained a resnet18 based model. This one had two drawbacks- first, it did not detect smaller license plates because the dataset contained mostly car shots from near range. Second, it was running only 22 FPS max. Having these results, I decided to go for a lighter resnet10 backbone with more extensive scaling augmentations- i.e. zooming out the image to make LPs smaller. This resulted in a more robust model with maximum speed of **28 FPS (35 ms)** after all optimizations. The below submission (weights and configs and results) represents this model.
 
 ### Framework deployment
 TLT comes as NVIDIA docker container. [The official documentation](https://docs.nvidia.com/metropolis/TLT/tlt-getting-started-guide/index.html#requirements) on the steps to install it is provided. It is recommended to run it with mounting local directories for data and outputs, in order to have results saved after container shutdown.
@@ -46,7 +46,7 @@ Once ready, the exported model can be connected to a Deepstream app. [Here](http
 ### Results
 I was able to achieve 0.71 mAP on validation set. Qualitative results can be seen from videos and images below, or evaluated by running the inference command mentioned above on the test images attached to the root of the repository.
 
-[download video here](https://drive.google.com/open?id=1tAd_WvfB2kfSFZ-GoK23wsNVi8jHI6rn)
+[download video here](https://drive.google.com/open?id=1PYMd4BkBKSSPxMtMHGAvi6uHiJrWtPOl)
 
 [test image results](https://drive.google.com/open?id=1KtczIrgb7nTKAkedNODnuG_l7r6FEEy0)
 
