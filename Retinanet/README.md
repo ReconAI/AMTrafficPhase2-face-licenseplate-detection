@@ -13,7 +13,7 @@ it is recommended to mount host directories to the container in order to retain 
 I use the same dataset as in Detectnet experiment. However, Retinanet expects the annotations to be in COCO json format. These JSON annotations for training and validation sets are available in the same compressed archive as the images.
 
 ### Training commands
-download pretrained resnet18 model from [here]()
+download pretrained resnet18 model from [here](https://github.com/NVIDIA/retinanet-examples/releases/tag/19.04)
 
 The command to launch traning was as follows
 ```retinanet train retinanet_rn18fpn.pth --backbone ResNet18FPN \
