@@ -21,6 +21,13 @@ I used the following approaches for the project:
 
 example testing images for face and license plate detection are also included, for consistency of evaluation across methods.
 
+Method | Result | Comment
+------------  | ------------- | -------------
+Cascade classifier  | 25 FPS | LP- Mediocre accuracy, but misses small LPs. Faces- poor acccuracy 
+Lightweight face detector  | 40 FPS | Good speed/accuracy ratio but heavy on resources
+**Detectnet_v2**  | **28 FPS** | **Good accuracy (0.7 mAP), sufficient speed. Selected solution**
+Retinanet | not measured | Failed to train well enough to test further
+
 Detailed specification can be found in each subproject's README
 
 The final submitted solution was built using Detectnet based on Resnet10, demonstrating 28 FPS on Jetson Nano and 0.7 mAP on validation set.
