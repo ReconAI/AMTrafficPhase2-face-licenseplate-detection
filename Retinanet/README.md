@@ -16,7 +16,8 @@ I use the same dataset as in Detectnet experiment. However, Retinanet expects th
 download pretrained resnet18 model from [here](https://github.com/NVIDIA/retinanet-examples/releases/tag/19.04)
 
 The command to launch traning was as follows
-```retinanet train retinanet_rn18fpn.pth --backbone ResNet18FPN \
+```
+retinanet train retinanet_rn18fpn.pth --backbone ResNet18FPN \
     --images path/to/data/images --annotations path/to/data/annotations_tr.json \
     --val-images path/to/data/images --val-annotations path/to/data/annotations_val.json \
     --classes 2 --batch 8 
@@ -24,7 +25,8 @@ The command to launch traning was as follows
 
 ### Testing commands
 evaluation on validation set:
-```retinanet infer your-model.pth --images=path/to/data/images \
+```
+retinanet infer your-model.pth --images=path/to/data/images \
   --annotations  path/to/data/annotations_val.json  --resize 640 --max-size 640
 ```
 This got me 0.5 mAP, which is not a satisfactory result, as mentioned above.
