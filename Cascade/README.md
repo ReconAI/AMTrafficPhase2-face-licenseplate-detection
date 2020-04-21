@@ -14,8 +14,8 @@ The cascade runs at ~70 ms (14 FPS) on a system with OpenCV without CUDA support
 1. run ```pip3 install -r requirements.txt```
 2. run ```python3 test_casade.py --in_folder {../test_licenseplate} --out_path {path to save samples} --cascade_path eu.xml```
 
-
 The script will save images with license plates highlighted, and print inference time to terminal.
+Results on testing images are presented [here](https://drive.google.com/open?id=1ophPfrMm_T2Wzvjnj9Kcabrzeqam3z64)
 
 ## Face detection
 
