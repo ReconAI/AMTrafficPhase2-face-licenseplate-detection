@@ -29,7 +29,21 @@ After training, the model can be pruned- that is, the layers and features that a
 After pruning, official documentation recommends re-training the pruned model. However, I did not notice improvements for re-trained pruned model over simply pruned one. Refer to docs for re-training and prunned_config.cfg for training specification file.
 
 ### Testing commands
-To evaluate model on the validation set, refer to [this](https://docs.nvidia.com/metropolis/TLT/tlt-getting-started-guide/index.html#evaluating_gridbox) instruction, using the trained full or pruned model and the configuration file from training step. The model will run evaluation and report mAP (approx. 0.7) on the validation set. 
+
+To evaluate model on the testing set, follow these steps:
+- Follow instructions above to set up the TLT environment, mounting a host directory to the container ('data' in the following example). Enter the container, the sample command is
+`sudo docker run --runtime=nvidia -it -v /media/hdd/data:/workspace/data 
+--rm -p 8228:8888 nvcr.io/nvidia/tlt-streamanalytics:v1.0_py2`
+
+- Unzip the following [files](https://drive.google.com/open?id=1ivHds9H-JwgrF98dHvx9JePwaX29oS1B) to the directory you mounted (e.g. 'data'). Keep directory structure (not creating extra folders). In 'data' there should be now a .cfg file and a 'test' folder with images subfolder and a tfrecords file.
+- Download the .tlt file from the 'Weight links' section below. Also put it to the mounted directory (e.g. 'data')
+- Run the following command
+```
+tlt-evaluate detectnet_v2 -e data/testing_config.cfg  -m data/model.step-72920.tlt  -k flp
+```
+This will prepare the evaluation and run it, reporting mAP (~86%) and per-class APs. 
+
+#### Image visualization inference
 
 Inference on the training host is done via [tlt-infer utility](https://docs.nvidia.com/metropolis/TLT/tlt-getting-started-guide/index.html#inference_detectnet_v2). For this, postprocessing config (`--cluster_params_file`) must be submitted. In this file we define parameters to cluster near-by bounding boxes into single object (instead of NMS used in other frameworks), specify confidence hresholds, etc. In this project, this file is ./cluster_params.json.
 
